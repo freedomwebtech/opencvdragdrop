@@ -10,7 +10,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(servo_pin,GPIO.OUT)
 pwm = GPIO.PWM(servo_pin,50)
 pwm.start(7)
-pwm.ChangeDutyCycle(2)
+pwm.ChangeDutyCycle(0)
 
 
 drawingModule = mediapipe.solutions.drawing_utils
