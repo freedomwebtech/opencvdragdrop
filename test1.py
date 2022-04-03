@@ -19,14 +19,11 @@ color=(0,0,255)
 cx,cy,w,h=100,100,90,90
 
 cap = cv2.VideoCapture(0)
-count=0
+
 with handsModule.Hands(static_image_mode=False, min_detection_confidence=0.7,
                        min_tracking_confidence=0.7, max_num_hands=1) as hands:
      while True:
            ret, frame = cap.read()
-           count += 1
-           if count % 3 != 0:
-              continue
            frame1 = cv2.resize(frame, (640, 480))
            results = hands.process(cv2.cvtColor(frame1, cv2.COLOR_BGR2RGB))
            if results.multi_hand_landmarks != None:
